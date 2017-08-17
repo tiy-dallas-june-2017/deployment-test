@@ -39,6 +39,11 @@ app.post('/addperson', (req, res) => {
   //redirect back to index page
 });
 
+app.get('/people', (req, res) => {
+  Person.find({}, (err, people) => {
+    res.json(people);
+  });
+});
 
 
 
